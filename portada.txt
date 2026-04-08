@@ -1,0 +1,16 @@
+--------------------Proyecto MVC GameMarket--------------------------
+
+--------------------Asignatura: Negocios Web-------------------------
+
+--------------------Equipo F (Integrantes):--------------------------
+
+Ivan Enrique Molina Ramirez (1401200200613) - Github: Ivanox222
+
+Edgardo Josue Caceres Rivera (1606200400098) - Github: Edgarc575
+
+Victor Alejandro Meza Portillo (1001200200256) - Github: alemp8
+
+Esteban Josue Matute Rodriguez (0506200400432) - Github: esmatute321
+
+
+Fecha de entrega: 16/04/2026
