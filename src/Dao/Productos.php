@@ -11,8 +11,10 @@ class Productos extends Table{
     #YA HICE LAS PRUEBAS CCON LA CONEXION SENCILLA EN HOMECONTROLLER Y FUNCIONA PERFECTAMENTE.
    
     #Proveedores
-    public static function getProveedores(){
-        die(print_r(self::obtenerRegistros("Select * from proveedor",[])));
+    public static function obtenerNombreProducto(string $nombre){
+        $sqlstr = "Select * from producto where prodnom=:prodnom;";
+        $parametro = ["prodnom"=>$nombre];
+    return self::obtenerUnRegistro($sqlstr,$parametro);
     }
 
     #Productos

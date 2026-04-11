@@ -1,19 +1,19 @@
 <?php
 namespace Controllers;
-use \Dao\Productos\Productos as ProductsDao;
+use \Dao\Productos\ProductoModelo as ProductosDao;
 use \Views\Renderer as Renderer;
 
 class HomeController extends PublicController
 {
     public function run() :void
     {
-        ProductsDao::getProductos();
+        ProductosDao::obtenerNombreProducto();
         #ProductsDao::getProveedores();
 
         $viewData = [];
-        $viewData["productsOnSale"] = ProductsDao::getDailyDeals();
-        $viewData["productsHighlighted"] = ProductsDao::getFeaturedProducts();
-        $viewData["productsNew"] = ProductsDao::getNewProducts();
+        $viewData["productsOnSale"] = ProductosDao::getDailyDeals();
+        $viewData["productsHighlighted"] = ProductosDao::getFeaturedProducts();
+        $viewData["productsNew"] = ProductosDao::getNewProducts();
         Renderer::render("home", $viewData);
     }
 }
