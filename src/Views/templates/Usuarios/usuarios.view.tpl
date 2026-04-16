@@ -45,11 +45,11 @@
                 <td>{{useractcod}}</td>
                 <td>{{userpswdchg}}</td>
                 <td>{{usertipo}}</td>
-                <td class="center">
-                    <a href="index.php?page=Usuarios_Usuario&mode=UPD&usercod={{usercod}}">Editar</a>
-                    &nbsp;
-                    <a href="index.php?page=Usuarios_Usuario&mode=DEL&usercod={{usercod}}">Eliminar</a>
-                </td>
+                                <td class="gm-actions-cell">
+    <a class="gm-action" href="index.php?page=Usuarios_Usuario&mode=UPD&usercod={{usercod}}">Editar</a>
+    <a class="gm-action gm-action-danger" href="index.php?page=Usuarios_Usuario&mode=DEL&usercod={{usercod}}">Eliminar</a>
+    <a class="gm-action" href="index.php?page=Usuarios_RolesUsuario&usercod={{usercod}}">Roles</a>
+</td>
             </tr>
             {{endfor usuarios}}
         </tbody>
