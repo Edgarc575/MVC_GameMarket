@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <div class="cliente-logo-corners" aria-hidden="true">
     <img class="cliente-corner-logo cliente-corner-logo-br" src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
 </div>
@@ -56,53 +55,11 @@
         <div class="row">
             <label for="cliest">Estado</label>
             <select name="cliest" id="cliest" {{if ~readonly}} disabled {{endif ~readonly}}>
-=======
-<section class="container-m row px-4 py-4">
-    <h1>{{FormTitle}}</h1>
-</section>
-<section class="container-m row px-4 py-4">
-    {{with cliente}}
-    <form action="index.php?page=Clientes_Cliente&mode={{~mode}}&clicod={{clicod}}" method="POST" class="col-12 col-m-8 offset-m-2">
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3" for="clicodD">Código</label>
-            <input class="col-12 col-m-9" readonly disabled type="text" name="clicodD" id="clicodD" value="{{clicod}}" />
-            <input type="hidden" name="mode" value="{{~mode}}" />
-            <input type="hidden" name="clicod" value="{{clicod}}" />
-            <input type="hidden" name="cliente_xss_token" value="{{~cliente_xss_token}}" />
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3" for="clinom">Nombre</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="text" name="clinom" id="clinom" value="{{clinom}}" />
-            {{if clinom_error}}<div class="col-12 col-m-9 offset-m-3 error">{{clinom_error}}</div>{{endif clinom_error}}
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3" for="clitel">Teléfono</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="text" name="clitel" id="clitel" value="{{clitel}}" />
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3" for="cliemail">Email</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="email" name="cliemail" id="cliemail" value="{{cliemail}}" />
-            {{if cliemail_error}}<div class="col-12 col-m-9 offset-m-3 error">{{cliemail_error}}</div>{{endif cliemail_error}}
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3" for="clidir">Dirección</label>
-            <textarea class="col-12 col-m-9" {{~readonly}} name="clidir" id="clidir">{{clidir}}</textarea>
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3" for="cliest">Estado</label>
-            <select class="col-12 col-m-9" name="cliest" id="cliest" {{if ~readonly}} disabled {{endif ~readonly}}>
->>>>>>> Stashed changes
                 <option value="ACT" {{if cliest_ACT}}selected{{endif cliest_ACT}}>Activo</option>
                 <option value="INA" {{if cliest_INA}}selected{{endif cliest_INA}}>Inactivo</option>
                 <option value="SUS" {{if cliest_SUS}}selected{{endif cliest_SUS}}>Suspendido</option>
             </select>
         </div>
-<<<<<<< Updated upstream
 
     {{endwith cliente}}
 
@@ -374,30 +331,3 @@ main {
     }
 }
 </style>
-=======
-    {{endwith cliente}}
-
-        <div class="row my-4 align-center flex-end">
-            {{if showCommitBtn}}
-            <button class="primary col-12 col-m-2" type="submit" name="btnConfirmar">Confirmar</button>
-            &nbsp;
-            {{endif showCommitBtn}}
-            <button class="col-12 col-m-2" type="button" id="btnCancelar">
-                {{if showCommitBtn}} Cancelar {{endif showCommitBtn}}
-                {{ifnot showCommitBtn}} Regresar {{endifnot showCommitBtn}}
-            </button>
-        </div>
-    </form>
-</section>
-
-<script>
-    document.addEventListener("DOMContentLoaded", ()=>{
-        const btnCancelar = document.getElementById("btnCancelar");
-        btnCancelar.addEventListener("click", (e)=>{
-            e.preventDefault();
-            e.stopPropagation();
-            window.location.assign("index.php?page=Clientes_Clientes");
-        });
-    });
-</script>
->>>>>>> Stashed changes

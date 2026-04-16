@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <div class="gm-logo-corner" aria-hidden="true">
     <img src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
 </div>
@@ -9,41 +8,14 @@
 
 <section class="container-m row px-4 py-4 gm-table-wrap">
     <table class="col-12 gm-table">
-=======
-<section class="container-m row px-4 py-4">
-    <h1>Listado de Productos</h1>
-</section>
-<section class="container-m row px-4 py-4">
-    <form action="index.php?page=Productos_Productos" method="GET" class="col-12 row align-center">
-        <input type="hidden" name="page" value="Productos_Productos">
-        <div class="col-12 col-m-4 px-2 py-2">
-            <label for="partialNombre">Nombre Producto</label>
-            <input class="width-full" type="text" name="partialNombre" id="partialNombre" value="{{partialNombre}}">
-        </div>
-        <div class="col-12 col-m-2 px-2 py-4">
-            <button type="submit" class="primary">Filtrar</button>
-        </div>
-    </form>
-</section>
-<section class="container-m row px-4 py-4">
-    <table class="col-12">
->>>>>>> Stashed changes
         <thead>
             <tr>
                 <th>Cod</th>
                 <th>Producto</th>
-<<<<<<< Updated upstream
                 <th>Precio</th>
                 <th>Stock</th>
                 <th>Proveedor</th>
                 <th><a href="index.php?page=Productos_Producto&mode=INS" class="button gm-link-btn">+ Nuevo</a></th>
-=======
-                <th>Imagen</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Proveedor</th>
-                <th><a href="index.php?page=Productos_Producto&mode=INS" class="button">+ Nuevo</a></th>
->>>>>>> Stashed changes
             </tr>
         </thead>
         <tbody>
@@ -51,33 +23,17 @@
             <tr>
                 <td>{{prodcod}}</td>
                 <td><a href="index.php?page=Productos_Producto&mode=DSP&prodcod={{prodcod}}">{{prodnom}}</a></td>
-<<<<<<< Updated upstream
                 <td>{{prodprecio}}</td>
                 <td>{{prodstock}}</td>
                 <td>{{provnom}}</td>
                 <td class="gm-actions-cell">
                     <a class="gm-action" href="index.php?page=Productos_Producto&mode=UPD&prodcod={{prodcod}}">Editar</a>
                     <a class="gm-action gm-action-danger" href="index.php?page=Productos_Producto&mode=DEL&prodcod={{prodcod}}">Eliminar</a>
-=======
-                <td>
-                    <div style="width:80px; height:80px; border:1px dashed #999; border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#f7f7f7; margin:auto;">
-                        {{if prodimg}}<img src="{{prodimg}}" alt="Imagen de {{prodnom}}" style="max-width:100%; max-height:100%; object-fit:cover;" />{{endif prodimg}}
-                        {{ifnot prodimg}}<span>Sin imagen</span>{{endifnot prodimg}}
-                    </div>
-                </td>
-                <td>{{prodprecio}}</td>
-                <td>{{prodstock}}</td>
-                <td>{{provnom}}</td>
-                <td>
-                    <a href="index.php?page=Productos_Producto&mode=UPD&prodcod={{prodcod}}">Editar</a>
-                    <a href="index.php?page=Productos_Producto&mode=DEL&prodcod={{prodcod}}">Eliminar</a>
->>>>>>> Stashed changes
                 </td>
             </tr>
             {{endfor productos}}
         </tbody>
     </table>
-<<<<<<< Updated upstream
     <div class="gm-pagination">{{pagination}}</div>
 </section>
 
@@ -91,7 +47,3 @@ main{background:linear-gradient(90deg,rgba(47,94,168,.08) 1px,transparent 1px),l
 .gm-table{background:var(--gm-white);border:3px solid var(--gm-black);border-collapse:separate;border-radius:8px;border-spacing:0;box-shadow:8px 8px 0 rgba(17,24,39,.22);color:var(--gm-red);overflow:hidden}.gm-table th{background:var(--gm-blue);color:var(--gm-white);padding:14px 12px;text-align:left}.gm-table td{border-top:2px solid rgba(17,24,39,.12);color:var(--gm-red);font-weight:bold;padding:14px 12px}.gm-table tbody tr:nth-child(even){background:rgba(47,94,168,.08)}.gm-table tbody tr:hover{background:var(--gm-red-soft)}.gm-table td a:not(.gm-action){color:var(--gm-red);font-weight:bold}.gm-link-btn,.gm-action{background:var(--gm-blue);border:2px solid var(--gm-black);border-radius:6px;color:var(--gm-white);display:inline-block;font-weight:bold;padding:10px 16px;text-decoration:none}.gm-link-btn:hover,.gm-action:hover{background:var(--gm-red);color:var(--gm-white);transform:translateY(-1px)}.gm-actions-cell{display:flex;flex-wrap:wrap;gap:8px}.gm-action{font-size:14px;padding:8px 12px}.gm-action-danger{background:#d65a5a}.gm-pagination{margin-top:22px;width:100%}.gm-pagination a{background:var(--gm-white);border:2px solid var(--gm-black);color:var(--gm-red);font-weight:bold}
 @media(max-width:760px){.gm-logo-corner img{height:70px;width:70px;bottom:64px}.gm-header h1,.gm-table{box-shadow:5px 5px 0 rgba(17,24,39,.24)}.gm-table-wrap{overflow-x:auto}.gm-table{min-width:760px}}
 </style>
-=======
-    {{pagination}}
-</section>
->>>>>>> Stashed changes

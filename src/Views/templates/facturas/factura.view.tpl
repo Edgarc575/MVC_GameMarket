@@ -1,245 +1,294 @@
-<<<<<<< Updated upstream
-<section class="container-m row px-4 py-4 factura-header">
-    <h1>{{FormTitle}}</h1>
+<div class="clientes-logo-corners" aria-hidden="true">
+    <img class="clientes-corner-logo clientes-corner-logo-br" src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
+</div>
+
+<section class="container-m row px-4 py-4 clientes-header">
+    <h1>Listado de Clientes</h1>
 </section>
 
-<section class="container-m row px-4 py-4 factura-panel">
-    {{with factura}}
-    <form action="index.php?page=Facturas_Factura&mode={{~mode}}&factcod={{factcod}}" method="POST" class="col-12 col-m-8 offset-m-2 factura-form">
-        <input type="hidden" name="factcod" value="{{factcod}}" />
-
-        <div class="row my-2 align-center factura-field">
-            <label class="col-12 col-m-3">N&deg; Factura</label>
-            <input class="col-12 col-m-9 factura-input" readonly disabled type="text" value="{{factcod}}" />
+<section class="container-m row px-4 py-4 clientes-filter">
+    <form action="index.php?page=Clientes_Clientes" method="GET" class="col-12 row align-center clientes-filter-form">
+        <input type="hidden" name="page" value="Clientes_Clientes">
+        <div class="col-12 col-m-4 px-2 py-2">
+            <label for="partialNombre">Nombre</label>
+            <input class="width-full clientes-input" type="text" name="partialNombre" id="partialNombre" value="{{partialNombre}}">
         </div>
-
-        <div class="row my-2 align-center factura-field">
-            <label class="col-12 col-m-3">Cliente (ID)</label>
-            <input class="col-12 col-m-9 factura-input" {{~readonly}} type="number" name="clicod" value="{{clicod}}" />
-            {{if clicod_error}}<div class="error">{{clicod_error}}</div>{{endif clicod_error}}
-        </div>
-
-        <div class="row my-2 align-center factura-field">
-            <label class="col-12 col-m-3">Vendedor (ID)</label>
-            <input class="col-12 col-m-9 factura-input" {{~readonly}} type="number" name="usercod" value="{{usercod}}" />
-        </div>
-
-        <div class="row my-2 align-center factura-field">
-            <label class="col-12 col-m-3">Fecha</label>
-            <input class="col-12 col-m-9 factura-input" {{~readonly}} type="datetime-local" name="factfecha" value="{{factfecha}}" />
-        </div>
-
-        <div class="row my-2 align-center factura-field">
-            <label class="col-12 col-m-3">Total</label>
-            <input class="col-12 col-m-9 factura-input" {{~readonly}} type="number" step="0.01" name="facttotal" value="{{facttotal}}" />
-            {{if facttotal_error}}<div class="error">{{facttotal_error}}</div>{{endif facttotal_error}}
-        </div>
-
-        <div class="row my-2 align-center factura-field">
-            <label class="col-12 col-m-3">Estado</label>
-            <select class="col-12 col-m-9 factura-input" name="factest" {{if ~readonly}}disabled{{endif ~readonly}}>
-=======
-<section class="container-m row px-4 py-4">
-    <h1>{{FormTitle}}</h1>
-</section>
-<section class="container-m row px-4 py-4">
-    {{with factura}}
-    <form action="index.php?page=Facturas_Factura&mode={{~mode}}&factcod={{factcod}}" method="POST" class="col-12 col-m-8 offset-m-2">
-        <input type="hidden" name="factcod" value="{{factcod}}" />
-        
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3">N° Factura</label>
-            <input class="col-12 col-m-9" readonly disabled type="text" value="{{factcod}}" />
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3">Cliente (ID)</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="number" name="clicod" value="{{clicod}}" />
-            {{if clicod_error}}<div class="error">{{clicod_error}}</div>{{endif clicod_error}}
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3">Vendedor (ID)</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="number" name="usercod" value="{{usercod}}" />
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3">Fecha</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="datetime-local" name="factfecha" value="{{factfecha}}" />
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3">Total</label>
-            <input class="col-12 col-m-9" {{~readonly}} type="number" step="0.01" name="facttotal" value="{{facttotal}}" />
-            {{if facttotal_error}}<div class="error">{{facttotal_error}}</div>{{endif facttotal_error}}
-        </div>
-
-        <div class="row my-2 align-center">
-            <label class="col-12 col-m-3">Estado</label>
-            <select class="col-12 col-m-9" name="factest" {{if ~readonly}}disabled{{endif ~readonly}}>
->>>>>>> Stashed changes
-                <option value="PEN" {{if factest_PEN}}selected{{endif factest_PEN}}>Pendiente</option>
-                <option value="PAG" {{if factest_PAG}}selected{{endif factest_PAG}}>Pagada</option>
-                <option value="CAN" {{if factest_CAN}}selected{{endif factest_CAN}}>Cancelada</option>
-            </select>
-        </div>
-    {{endwith factura}}
-
-<<<<<<< Updated upstream
-        <div class="row my-4 align-center flex-end factura-actions">
-            {{if showCommitBtn}}<button class="primary factura-btn" type="submit">Confirmar</button>{{endif showCommitBtn}}
-            <button class="factura-btn" type="button" onclick="window.location.assign('index.php?page=Facturas_Facturas')">Regresar</button>
+        <div class="col-12 col-m-2 px-2 py-4">
+            <button type="submit" class="primary clientes-btn">Filtrar</button>
         </div>
     </form>
 </section>
 
+<section class="container-m row px-4 py-4 clientes-table-wrap">
+    <table class="col-12 clientes-table">
+        <thead>
+            <tr>
+                <th>C&oacute;digo</th>
+                <th>Nombre</th>
+                <th>Tel&eacute;fono</th>
+                <th>Email</th>
+                <th>Estado</th>
+                <th><a href="index.php?page=Clientes_Cliente&mode=INS" class="button clientes-link-btn">+ Nuevo</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{foreach clientes}}
+            <tr>
+                <td>{{clicod}}</td>
+                <td><a href="index.php?page=Clientes_Cliente&mode=DSP&clicod={{clicod}}">{{clinom}}</a></td>
+                <td>{{clitel}}</td>
+                <td>{{cliemail}}</td>
+                <td>{{cliest}}</td>
+                <td class="center">
+                    <a class="clientes-action" href="index.php?page=Clientes_Cliente&mode=UPD&clicod={{clicod}}">Editar</a>
+                    &nbsp;
+                    <a class="clientes-action clientes-action-danger" href="index.php?page=Clientes_Cliente&mode=DEL&clicod={{clicod}}">Eliminar</a>
+                </td>
+            </tr>
+            {{endfor clientes}}
+        </tbody>
+    </table>
+</section>
+
 <style>
 :root {
-    --factura-azul: #1e3a8a;
-    --factura-rojo: #dc2626;
-    --factura-negro: #050505;
-    --factura-blanco: #ffffff;
+    --clientes-azul: #2f5ea8;
+    --clientes-azul-suave: #dbeafe;
+    --clientes-rojo: #c43c3c;
+    --clientes-rojo-suave: #ffe4e6;
+    --clientes-negro: #111827;
+    --clientes-blanco: #ffffff;
 }
 
 body {
-    background: var(--factura-azul);
-    color: var(--factura-rojo);
+    background: var(--clientes-azul-suave);
+    color: var(--clientes-rojo);
     font-family: Arial, sans-serif;
 }
 
-.factura-header,
-.factura-panel {
-    background: var(--factura-azul);
+main {
+    background:
+        linear-gradient(90deg, rgba(47, 94, 168, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(47, 94, 168, 0.08) 1px, transparent 1px),
+        linear-gradient(180deg, #edf5ff 0%, #dbeafe 100%);
+    background-size: 22px 22px, 22px 22px, auto;
+    overflow: hidden;
+    position: relative;
 }
 
-.factura-header {
+.clientes-header,
+.clientes-filter,
+.clientes-table-wrap {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.clientes-logo-corners {
+    pointer-events: none;
+}
+
+.clientes-corner-logo {
+    border: 3px solid var(--clientes-negro);
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 rgba(17, 24, 39, 0.35);
+    height: 110px;
+    object-fit: cover;
+    opacity: 0.78;
+    position: fixed;
+    width: 110px;
+    z-index: 2;
+}
+
+.clientes-corner-logo-br {
+    bottom: 72px;
+    right: 18px;
+}
+
+.clientes-header {
     padding-top: 48px;
 }
 
-.factura-header h1 {
-    background: var(--factura-blanco);
-    border: 3px solid var(--factura-negro);
-    border-left: 10px solid var(--factura-rojo);
+.clientes-header h1 {
+    color: var(--clientes-rojo);
+    background: var(--clientes-blanco);
+    border: 3px solid var(--clientes-negro);
+    border-left: 10px solid var(--clientes-azul);
     border-radius: 8px;
-    box-shadow: 8px 8px 0 var(--factura-negro);
-    color: var(--factura-rojo);
-    letter-spacing: 0;
+    box-shadow: 8px 8px 0 rgba(17, 24, 39, 0.24);
     margin: 0 auto;
-    max-width: 620px;
+    max-width: 560px;
     padding: 18px 22px;
     text-align: center;
+    letter-spacing: 0;
+    position: relative;
+    text-transform: uppercase;
 }
 
-.factura-form {
-    background: var(--factura-blanco);
-    border: 3px solid var(--factura-negro);
+.clientes-header h1::before,
+.clientes-header h1::after {
+    background: var(--clientes-rojo-suave);
+    border: 2px solid var(--clientes-rojo);
+    border-radius: 6px;
+    color: var(--clientes-rojo);
+    content: "PLAYERS";
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    position: absolute;
+    top: -14px;
+}
+
+.clientes-header h1::before {
+    left: 18px;
+}
+
+.clientes-header h1::after {
+    content: "ROSTER";
+    right: 18px;
+}
+
+.clientes-filter-form {
+    background: var(--clientes-blanco);
+    border: 3px solid var(--clientes-negro);
     border-radius: 8px;
-    box-shadow: 8px 8px 0 var(--factura-negro);
-    color: var(--factura-rojo);
-    padding: 28px;
+    box-shadow: 8px 8px 0 rgba(17, 24, 39, 0.22);
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 22px;
+    position: relative;
 }
 
-.factura-form::before {
-    background: linear-gradient(90deg, var(--factura-rojo), var(--factura-azul), var(--factura-negro));
+.clientes-filter-form::before {
+    background: linear-gradient(90deg, var(--clientes-rojo), var(--clientes-blanco), var(--clientes-azul));
     border-radius: 6px;
     content: "";
     display: block;
-    height: 7px;
-    margin-bottom: 24px;
+    height: 6px;
+    margin-bottom: 16px;
 }
 
-.factura-field {
-    margin-bottom: 18px;
-}
-
-.factura-form label {
-    color: var(--factura-rojo);
+.clientes-filter-form label {
+    color: var(--clientes-rojo);
+    display: block;
     font-weight: bold;
+    margin-bottom: 6px;
 }
 
-.factura-input {
-    background: var(--factura-rojo);
-    border: 2px solid var(--factura-negro);
+.clientes-input {
+    background: var(--clientes-rojo-suave);
+    border: 2px solid var(--clientes-negro);
     border-radius: 6px;
-    color: var(--factura-blanco);
+    color: var(--clientes-rojo);
     font-weight: bold;
     min-height: 44px;
     padding: 10px 12px;
 }
 
-.factura-input:focus {
+.clientes-input:focus {
     box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.28);
     outline: none;
 }
 
-.factura-input[readonly],
-.factura-input:disabled {
-    background: var(--factura-rojo);
-    color: var(--factura-blanco);
-    opacity: 0.75;
-}
-
-.factura-input option {
-    background: var(--factura-blanco);
-    color: var(--factura-rojo);
-}
-
-.factura-form .error {
-    color: var(--factura-rojo);
-    font-size: 13px;
-    font-weight: bold;
-    margin-left: 25%;
-    margin-top: 6px;
-}
-
-.factura-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-bottom: 0;
-}
-
-.factura-btn {
-    background: var(--factura-azul);
-    border: 2px solid var(--factura-negro);
+.clientes-btn,
+.clientes-link-btn,
+.clientes-action {
+    background: var(--clientes-azul);
+    border: 2px solid var(--clientes-negro);
     border-radius: 6px;
-    color: var(--factura-blanco);
-    cursor: pointer;
+    color: var(--clientes-blanco);
+    display: inline-block;
     font-weight: bold;
-    padding: 11px 18px;
-    transition: background 0.2s ease, transform 0.2s ease;
+    padding: 10px 16px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.factura-btn:hover {
-    background: var(--factura-negro);
+.clientes-btn:hover,
+.clientes-link-btn:hover,
+.clientes-action:hover {
+    background: var(--clientes-rojo);
+    color: var(--clientes-blanco);
     transform: translateY(-1px);
 }
 
-@media (max-width: 640px) {
-    .factura-header h1,
-    .factura-form {
-        box-shadow: 5px 5px 0 var(--factura-negro);
+.clientes-table {
+    background: var(--clientes-blanco);
+    border: 3px solid var(--clientes-negro);
+    border-collapse: separate;
+    border-radius: 8px;
+    border-spacing: 0;
+    box-shadow: 8px 8px 0 rgba(17, 24, 39, 0.22);
+    color: var(--clientes-rojo);
+    overflow: hidden;
+}
+
+.clientes-table th {
+    background: var(--clientes-azul);
+    color: var(--clientes-blanco);
+    padding: 14px 12px;
+    text-align: left;
+}
+
+.clientes-table td {
+    border-top: 2px solid rgba(5, 5, 5, 0.12);
+    color: var(--clientes-rojo);
+    font-weight: bold;
+    padding: 14px 12px;
+}
+
+.clientes-table tbody tr:nth-child(even) {
+    background: rgba(47, 94, 168, 0.08);
+}
+
+.clientes-table tbody tr:hover {
+    background: var(--clientes-rojo-suave);
+}
+
+.clientes-table td a:not(.clientes-action) {
+    color: var(--clientes-rojo);
+    font-weight: bold;
+}
+
+.clientes-action {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.clientes-action-danger {
+    background: #d65a5a;
+}
+
+@media (max-width: 760px) {
+    .clientes-corner-logo {
+        height: 70px;
+        width: 70px;
     }
 
-    .factura-form {
-        padding: 20px;
+    .clientes-corner-logo-br {
+        bottom: 64px;
     }
 
-    .factura-form .error {
-        margin-left: 0;
+    .clientes-header h1,
+    .clientes-filter-form,
+    .clientes-table {
+        box-shadow: 5px 5px 0 rgba(17, 24, 39, 0.24);
     }
 
-    .factura-btn {
+    .clientes-filter-form {
+        padding: 16px;
+    }
+
+    .clientes-btn {
         width: 100%;
+    }
+
+    .clientes-table-wrap {
+        overflow-x: auto;
+    }
+
+    .clientes-table {
+        min-width: 720px;
     }
 }
 </style>
-=======
-        <div class="row my-4 align-center flex-end">
-            {{if showCommitBtn}}<button class="primary" type="submit">Confirmar</button>{{endif showCommitBtn}}
-            <button type="button" onclick="window.location.assign('index.php?page=Facturas_Facturas')">Regresar</button>
-        </div>
-    </form>
-</section>
->>>>>>> Stashed changes

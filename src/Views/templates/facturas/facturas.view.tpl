@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <div class="facturas-logo-corners" aria-hidden="true">
     <img class="facturas-corner-logo facturas-corner-logo-br" src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
 </div>
@@ -22,25 +21,6 @@
 
 <section class="container-m row px-4 py-4 facturas-table-wrap">
     <table class="col-12 facturas-table">
-=======
-<section class="container-m row px-4 py-4">
-    <h1>Historial de Facturacion</h1>
-</section>
-<section class="container-m row px-4 py-4">
-    <form action="index.php?page=Facturas_Facturas" method="GET" class="col-12 row align-center">
-        <input type="hidden" name="page" value="Facturas_Facturas">
-        <div class="col-12 col-m-4 px-2 py-2">
-            <label for="partialCod">Factura o Cliente</label>
-            <input class="width-full" type="text" name="partialCod" id="partialCod" value="{{partialCod}}">
-        </div>
-        <div class="col-12 col-m-2 px-2 py-4">
-            <button type="submit" class="primary">Filtrar</button>
-        </div>
-    </form>
-</section>
-<section class="container-m row px-4 py-4">
-    <table class="col-12">
->>>>>>> Stashed changes
         <thead>
             <tr>
                 <th>No.</th>
@@ -49,11 +29,7 @@
                 <th>Vendedor</th>
                 <th>Total</th>
                 <th>Est.</th>
-<<<<<<< Updated upstream
                 <th><a href="index.php?page=Facturas_Factura&mode=INS" class="button facturas-link-btn">+ Nueva</a></th>
-=======
-                <th><a href="index.php?page=Facturas_Factura&mode=INS" class="button">+ Nueva</a></th>
->>>>>>> Stashed changes
             </tr>
         </thead>
         <tbody>
@@ -65,21 +41,14 @@
                 <td>{{username}}</td>
                 <td>L {{facttotal}}</td>
                 <td>{{factest}}</td>
-<<<<<<< Updated upstream
                 <td class="facturas-actions-cell">
                     <a class="facturas-action" href="index.php?page=Facturas_Factura&mode=UPD&factcod={{factcod}}">Editar</a>
                     <a class="facturas-action facturas-action-danger" href="index.php?page=Facturas_Factura&mode=DEL&factcod={{factcod}}">Eliminar</a>
-=======
-                <td>
-                    <a href="index.php?page=Facturas_Factura&mode=UPD&factcod={{factcod}}">Editar</a>
-                    <a href="index.php?page=Facturas_Factura&mode=DEL&factcod={{factcod}}">Eliminar</a>
->>>>>>> Stashed changes
                 </td>
             </tr>
             {{endfor facturas}}
         </tbody>
     </table>
-<<<<<<< Updated upstream
     <div class="facturas-pagination">
         {{pagination}}
     </div>
@@ -343,7 +312,3 @@ main {
     }
 }
 </style>
-=======
-    {{pagination}}
-</section>
->>>>>>> Stashed changes

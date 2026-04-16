@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <div class="clientes-logo-corners" aria-hidden="true">
     <img class="clientes-corner-logo clientes-corner-logo-br" src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
 </div>
@@ -30,33 +29,6 @@
                 <th>Email</th>
                 <th>Estado</th>
                 <th><a href="index.php?page=Clientes_Cliente&mode=INS" class="button clientes-link-btn">+ Nuevo</a></th>
-=======
-<section class="container-m row px-4 py-4">
-    <h1>Listado de Clientes</h1>
-</section>
-<section class="container-m row px-4 py-4">
-    <form action="index.php?page=Clientes_Clientes" method="GET" class="col-12 row align-center">
-        <input type="hidden" name="page" value="Clientes_Clientes">
-        <div class="col-12 col-m-4 px-2 py-2">
-            <label for="partialNombre">Nombre</label>
-            <input class="width-full" type="text" name="partialNombre" id="partialNombre" value="{{partialNombre}}">
-        </div>
-        <div class="col-12 col-m-2 px-2 py-4">
-            <button type="submit" class="primary">Filtrar</button>
-        </div>
-    </form>
-</section>
-<section class="container-m row px-4 py-4">
-    <table class="col-12">
-        <thead>
-            <tr>
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Email</th>
-                <th>Estado</th>
-                <th><a href="index.php?page=Clientes_Cliente&mode=INS" class="button">+ Nuevo</a></th>
->>>>>>> Stashed changes
             </tr>
         </thead>
         <tbody>
@@ -68,21 +40,14 @@
                 <td>{{cliemail}}</td>
                 <td>{{cliest}}</td>
                 <td class="center">
-<<<<<<< Updated upstream
                     <a class="clientes-action" href="index.php?page=Clientes_Cliente&mode=UPD&clicod={{clicod}}">Editar</a>
                     &nbsp;
                     <a class="clientes-action clientes-action-danger" href="index.php?page=Clientes_Cliente&mode=DEL&clicod={{clicod}}">Eliminar</a>
-=======
-                    <a href="index.php?page=Clientes_Cliente&mode=UPD&clicod={{clicod}}">Editar</a>
-                    &nbsp;
-                    <a href="index.php?page=Clientes_Cliente&mode=DEL&clicod={{clicod}}">Eliminar</a>
->>>>>>> Stashed changes
                 </td>
             </tr>
             {{endfor clientes}}
         </tbody>
     </table>
-<<<<<<< Updated upstream
 </section>
 
 <style>
@@ -327,6 +292,3 @@ main {
     }
 }
 </style>
-=======
-</section>
->>>>>>> Stashed changes
