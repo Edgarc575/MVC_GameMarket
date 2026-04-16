@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="gm-logo-corner" aria-hidden="true">
     <img src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
 </div>
@@ -48,12 +49,71 @@
         <div class="row my-2 align-center gm-field">
             <label class="col-12 col-m-3">Estado</label>
             <select class="col-12 col-m-9 gm-input" name="prodest" {{if ~readonly}}disabled{{endif ~readonly}}>
+=======
+<section class="container-m row px-4 py-4">
+    <h1>{{FormTitle}}</h1>
+</section>
+<section class="container-m row px-4 py-4">
+    {{with producto}}
+    <form action="index.php?page=Productos_Producto&mode={{~mode}}&prodcod={{prodcod}}" method="POST" class="col-12 col-m-8 offset-m-2">
+        <input type="hidden" name="prodcod" value="{{prodcod}}" />
+        <input type="hidden" name="producto_xss_token" value="{{~producto_xss_token}}" />
+        
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Código</label>
+            <input class="col-12 col-m-9" readonly disabled type="text" value="{{prodcod}}" />
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Nombre</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="text" name="prodnom" value="{{prodnom}}" />
+            {{if prodnom_error}}<div class="error">{{prodnom_error}}</div>{{endif prodnom_error}}
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Descripción</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="text" name="proddsc" value="{{proddsc}}" />
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Precio</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="number" step="0.01" name="prodprecio" value="{{prodprecio}}" />
+            {{if prodprecio_error}}<div class="error">{{prodprecio_error}}</div>{{endif prodprecio_error}}
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Stock</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="number" name="prodstock" value="{{prodstock}}" />
+        </div>
+
+        <div class="row my-2 align-start">
+            <label class="col-12 col-m-3">Imagen</label>
+            <div class="col-12 col-m-9">
+                <input class="width-full" {{~readonly}} type="text" name="prodimg" value="{{prodimg}}" placeholder="URL de la imagen del producto" />
+                <div style="margin-top:12px; width:180px; height:180px; border:1px dashed #999; border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#f7f7f7;">
+                    {{if prodimg}}<img src="{{prodimg}}" alt="Imagen de {{prodnom}}" style="max-width:100%; max-height:100%; object-fit:cover;" />{{endif prodimg}}
+                    {{ifnot prodimg}}<span>Sin imagen</span>{{endifnot prodimg}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Proveedor (ID opcional)</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="number" name="provcod" value="{{provcod}}" />
+            {{if provcod_error}}<div class="error">{{provcod_error}}</div>{{endif provcod_error}}
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Estado</label>
+            <select class="col-12 col-m-9" name="prodest" {{if ~readonly}}disabled{{endif ~readonly}}>
+>>>>>>> Stashed changes
                 <option value="ACT" {{if prodest_ACT}}selected{{endif prodest_ACT}}>Activo</option>
                 <option value="INA" {{if prodest_INA}}selected{{endif prodest_INA}}>Inactivo</option>
             </select>
         </div>
     {{endwith producto}}
 
+<<<<<<< Updated upstream
         <div class="row my-4 align-center flex-end gm-actions">
             {{if showCommitBtn}}<button class="primary gm-btn" type="submit">Confirmar</button>{{endif showCommitBtn}}
             <button class="gm-btn" type="button" onclick="window.location.assign('index.php?page=Productos_Productos')">Regresar</button>
@@ -71,3 +131,11 @@ main{background:linear-gradient(90deg,rgba(47,94,168,.08) 1px,transparent 1px),l
 .gm-form{background:var(--gm-white);border:3px solid var(--gm-black);border-radius:8px;box-shadow:8px 8px 0 rgba(17,24,39,.22);padding:28px}.gm-form:before{background:linear-gradient(90deg,var(--gm-red),var(--gm-white),var(--gm-blue));border-radius:6px;content:"";display:block;height:6px;margin-bottom:22px}.gm-field{margin-bottom:18px}.gm-form label{color:var(--gm-red);font-weight:bold}.gm-input{background:var(--gm-red-soft);border:2px solid var(--gm-black);border-radius:6px;color:var(--gm-red);font-weight:bold;min-height:44px;padding:10px 12px}.gm-input:focus{box-shadow:0 0 0 4px rgba(196,60,60,.22);outline:none}.gm-input[readonly],.gm-input:disabled{opacity:.75}.gm-input option{background:var(--gm-white);color:var(--gm-red)}.gm-form .error{color:var(--gm-red);font-size:13px;font-weight:bold;margin-left:25%;margin-top:6px}.gm-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}.gm-btn{background:var(--gm-blue);border:2px solid var(--gm-black);border-radius:6px;color:var(--gm-white);cursor:pointer;font-weight:bold;padding:11px 18px}.gm-btn:hover{background:var(--gm-red);transform:translateY(-1px)}
 @media(max-width:640px){.gm-logo-corner img{height:70px;width:70px;bottom:64px}.gm-header h1,.gm-form{box-shadow:5px 5px 0 rgba(17,24,39,.24)}.gm-form{padding:20px}.gm-form .error{margin-left:0}.gm-btn{width:100%}}
 </style>
+=======
+        <div class="row my-4 align-center flex-end">
+            {{if showCommitBtn}}<button class="primary" type="submit">Confirmar</button>{{endif showCommitBtn}}
+            <button type="button" onclick="window.location.assign('index.php?page=Productos_Productos')">Regresar</button>
+        </div>
+    </form>
+</section>
+>>>>>>> Stashed changes

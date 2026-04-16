@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <section class="container-m row px-4 py-4 factura-header">
     <h1>{{FormTitle}}</h1>
 </section>
@@ -37,6 +38,46 @@
         <div class="row my-2 align-center factura-field">
             <label class="col-12 col-m-3">Estado</label>
             <select class="col-12 col-m-9 factura-input" name="factest" {{if ~readonly}}disabled{{endif ~readonly}}>
+=======
+<section class="container-m row px-4 py-4">
+    <h1>{{FormTitle}}</h1>
+</section>
+<section class="container-m row px-4 py-4">
+    {{with factura}}
+    <form action="index.php?page=Facturas_Factura&mode={{~mode}}&factcod={{factcod}}" method="POST" class="col-12 col-m-8 offset-m-2">
+        <input type="hidden" name="factcod" value="{{factcod}}" />
+        
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">N° Factura</label>
+            <input class="col-12 col-m-9" readonly disabled type="text" value="{{factcod}}" />
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Cliente (ID)</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="number" name="clicod" value="{{clicod}}" />
+            {{if clicod_error}}<div class="error">{{clicod_error}}</div>{{endif clicod_error}}
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Vendedor (ID)</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="number" name="usercod" value="{{usercod}}" />
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Fecha</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="datetime-local" name="factfecha" value="{{factfecha}}" />
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Total</label>
+            <input class="col-12 col-m-9" {{~readonly}} type="number" step="0.01" name="facttotal" value="{{facttotal}}" />
+            {{if facttotal_error}}<div class="error">{{facttotal_error}}</div>{{endif facttotal_error}}
+        </div>
+
+        <div class="row my-2 align-center">
+            <label class="col-12 col-m-3">Estado</label>
+            <select class="col-12 col-m-9" name="factest" {{if ~readonly}}disabled{{endif ~readonly}}>
+>>>>>>> Stashed changes
                 <option value="PEN" {{if factest_PEN}}selected{{endif factest_PEN}}>Pendiente</option>
                 <option value="PAG" {{if factest_PAG}}selected{{endif factest_PAG}}>Pagada</option>
                 <option value="CAN" {{if factest_CAN}}selected{{endif factest_CAN}}>Cancelada</option>
@@ -44,6 +85,7 @@
         </div>
     {{endwith factura}}
 
+<<<<<<< Updated upstream
         <div class="row my-4 align-center flex-end factura-actions">
             {{if showCommitBtn}}<button class="primary factura-btn" type="submit">Confirmar</button>{{endif showCommitBtn}}
             <button class="factura-btn" type="button" onclick="window.location.assign('index.php?page=Facturas_Facturas')">Regresar</button>
@@ -193,3 +235,11 @@ body {
     }
 }
 </style>
+=======
+        <div class="row my-4 align-center flex-end">
+            {{if showCommitBtn}}<button class="primary" type="submit">Confirmar</button>{{endif showCommitBtn}}
+            <button type="button" onclick="window.location.assign('index.php?page=Facturas_Facturas')">Regresar</button>
+        </div>
+    </form>
+</section>
+>>>>>>> Stashed changes
