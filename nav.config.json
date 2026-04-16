@@ -9,6 +9,36 @@
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=Sec_Register",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Crear Cuenta"
+    },
+    {
+      "id": "Menu_Clientes",
+      "nav_url": "index.php?page=Clientes_Clientes",
+      "nav_label":"<i class=\"fas fa-clientes\"></i>&nbsp;Clientes"
+    },
+    {
+      "id": "Menu_Facturas",
+      "nav_url": "index.php?page=Facturas_Facturas",
+      "nav_label":"<i class=\"fas fa-facturas\"></i>&nbsp;Historial de Facturacion"
+    },
+    {
+      "id": "Menu_Productos",
+      "nav_url": "index.php?page=Productos_Productos",
+      "nav_label":"<i class=\"fas fa-productos\"></i>&nbsp;Productos"
+    },
+    {
+      "id": "Menu_Proveedores",
+      "nav_url": "index.php?page=Proveedores_Proveedores",
+      "nav_label":"<i class=\"fas fa-proveedores\"></i>&nbsp;Proveedores"
+    },
+    {
+      "id": "Menu_Roles",
+      "nav_url": "index.php?page=Roles_Roles",
+      "nav_label":"<i class=\"fas fa-roles\"></i>&nbsp;Roles"
+    },
+    {
+      "id": "Menu_Usuarios",
+      "nav_url": "index.php?page=Usuarios_Usuarios",
+      "nav_label":"<i class=\"fas fa-usuarios\"></i>&nbsp;Usuarios"
     }
   ],
   "private": [
