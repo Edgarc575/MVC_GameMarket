@@ -1,40 +1,34 @@
-<div class="gm-logo-corner" aria-hidden="true">
-    <img src="{{BASE_DIR}}/public/imgs/img.jpeg" alt="">
-</div>
-
-<section class="container-m row px-4 py-4 gm-header">
+<section class="container-m row px-4 py-4">
     <h1>Listado de Usuarios</h1>
 </section>
-
-<section class="container-m row px-4 py-4 gm-filter">
-    <form action="index.php?page=Usuarios_Usuarios" method="GET" class="col-12 row align-center gm-filter-form">
+<section class="container-m row px-4 py-4">
+    <form action="index.php?page=Usuarios_Usuarios" method="GET" class="col-12 row align-center">
         <input type="hidden" name="page" value="Usuarios_Usuarios">
         <div class="col-12 col-m-4 px-2 py-2">
             <label for="partialNombre">Nombre</label>
-            <input class="width-full gm-input" type="text" name="partialNombre" id="partialNombre" value="{{partialNombre}}">
+            <input class="width-full" type="text" name="partialNombre" id="partialNombre" value="{{partialNombre}}">
         </div>
         <div class="col-12 col-m-2 px-2 py-4">
-            <button type="submit" class="primary gm-btn">Filtrar</button>
+            <button type="submit" class="primary">Filtrar</button>
         </div>
     </form>
 </section>
-
-<section class="container-m row px-4 py-4 gm-table-wrap">
-    <table class="col-12 gm-table">
+<section class="container-m row px-4 py-4">
+    <table class="col-12">
         <thead>
             <tr>
-                <th>C&oacute;digo Usuario</th>
+                <th>Código Usuario</th>
                 <th>Correo Usuario</th>
                 <th>Nombre Usuario</th>
-                <th>Contrase&ntilde;a</th>
-                <th>Fecha Ingreso</th>
-                <th>Estado Contrase&ntilde;a</th>
-                <th>Fecha Expiraci&oacute;n</th>
+                <th>Contrasenha</th>
+                <th>userfching</th>
+                <th>Fecha estado contrasenha</th>
+                <th>Fecha expiracion contrasenha</th>
                 <th>Estado Usuario</th>
-                <th>C&oacute;digo Activaci&oacute;n</th>
-                <th>Cambio Contrase&ntilde;a</th>
+                <th>useractcod</th>
+                <th>userpswdchg</th>
                 <th>Tipo de Usuario</th>
-                <th><a href="index.php?page=Usuarios_Usuario&mode=INS" class="button gm-link-btn">+ Nuevo</a></th>
+                <th><a href="index.php?page=Usuarios_Usuario&mode=INS" class="button">+ Nuevo</a></th>
             </tr>
         </thead>
         <tbody>
@@ -51,7 +45,7 @@
                 <td>{{useractcod}}</td>
                 <td>{{userpswdchg}}</td>
                 <td>{{usertipo}}</td>
-    <td class="gm-actions-cell">
+                                <td class="gm-actions-cell">
     <a class="gm-action" href="index.php?page=Usuarios_Usuario&mode=UPD&usercod={{usercod}}">Editar</a>
     <a class="gm-action gm-action-danger" href="index.php?page=Usuarios_Usuario&mode=DEL&usercod={{usercod}}">Eliminar</a>
     <a class="gm-action" href="index.php?page=Usuarios_RolesUsuario&usercod={{usercod}}">Roles</a>
@@ -61,6 +55,9 @@
         </tbody>
     </table>
 </section>
+
+
+
 
 <style>
 :root{--gm-blue:#2f5ea8;--gm-blue-soft:#dbeafe;--gm-red:#c43c3c;--gm-red-soft:#ffe4e6;--gm-black:#111827;--gm-white:#fff}
