@@ -1,7 +1,7 @@
 <?php
 
 namespace Controllers\Mantenimientos\Productos;
-use Dao\Productos\ProductoModelo as ProductosDao;
+use Dao\Productos\Productos as ProductosDao;
 use Controllers\PublicController;
 use Utilities\Site;
 use Views\Renderer;

@@ -5,7 +5,7 @@ use Controllers\PublicController;
 use Views\Renderer;
 
 #Modelo
-use Dao\Productos\ProductoModelo as ProductosModeloDao;
+use Dao\Productos\Productos as ProductosModeloDao;
 
 const LIST_VIEW_TEMPLATE = "Mantenimientos/Productos/ListadoProductos";
 
@@ -13,7 +13,8 @@ class ListadoProductos extends PublicController{
     private array $listaProductos = [];
 
     public function run(): void{
-        $this->listaProductos = ProductosModeloDao::obtenerProductos();
+        $resultado = ProductosModeloDao::getProductos();
+        $this->listaProductos = $resultado["productos"] ?? [];
         Renderer::render(LIST_VIEW_TEMPLATE, $this->prepararVistaProductos());
     }
 
